@@ -1,0 +1,26 @@
+info:
+  application:
+    name: exchange-rate
+    version: '@project.version@'
+
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: false
+        secure: false
+        max-age: 36000
+
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:liquibase/migrations.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, loggers
